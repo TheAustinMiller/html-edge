@@ -23,6 +23,48 @@ body {
     min-height: 100vh;
 }
 
+/* Custom Scrollbar - Always on top */
+::-webkit-scrollbar {
+    width: 14px;
+    z-index: 9999;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(10, 10, 10, 0.8));
+    border-left: 2px solid rgba(253, 206, 0, 0.1);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #fdce00 0%, #ffa500 50%, #1b38e3 100%);
+    border-radius: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 
+        0 0 6px rgba(253, 206, 0, 0.5),
+        inset 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ffd633 0%, #ffb84d 50%, #3d5af1 100%);
+    box-shadow: 
+        0 0 10px rgba(253, 206, 0, 0.8),
+        inset 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(180deg, #ffed4e 0%, #ffc266 50%, #5a75f9 100%);
+}
+
+/* Firefox Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #fdce00 rgba(0, 0, 0, 0.5);
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
 /* Header - Sleek & Modern */
 .header {
     position: fixed;
@@ -73,13 +115,11 @@ body {
 }
 
 @keyframes pulse-accent {
-
     0%,
     100% {
         opacity: 1;
         transform: scaleY(1);
     }
-
     50% {
         opacity: 0.7;
         transform: scaleY(1.2);
@@ -93,6 +133,23 @@ body {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-left: 1rem;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fdce00;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
 }
 
 /* Navigation Bar - Premium Look */
@@ -163,12 +220,13 @@ body {
 
 /* Main Content */
 main {
-    flex: 1;
+    flex: 1 0 auto;
     margin-top: 140px;
     padding: 2rem;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 /* Page Content Sections */
@@ -191,16 +249,15 @@ main {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* Hero Sections - More Sophisticated */
+/* Hero Sections - Clean without animation */
 .hero {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(27, 56, 227, 0.1) 100%);
+    background: rgba(255, 255, 255, 0.05);
     color: white;
     padding: 4rem 2rem;
     border-radius: 20px;
@@ -210,31 +267,6 @@ main {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 30% 30%, rgba(253, 206, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(27, 56, 227, 0.05) 0%, transparent 50%);
-    animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(1deg);
-    }
 }
 
 .hero-content {
@@ -267,6 +299,8 @@ main {
     letter-spacing: 1px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(253, 206, 0, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -274,7 +308,69 @@ main {
     box-shadow: 0 6px 20px rgba(253, 206, 0, 0.4);
 }
 
-/* Schedule Styles */
+/* Unified Schedule Container */
+.schedule-container {
+    margin-top: 2rem;
+}
+
+.schedule-unified {
+    display: flex;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.schedule-unified::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #fdce00, #1b38e3);
+}
+
+.schedule-unified:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(253, 206, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.schedule-section {
+    flex: 1;
+    text-align: center;
+}
+
+.schedule-section h3 {
+    color: #fdce00;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.schedule-section p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.schedule-section strong {
+    color: rgba(253, 206, 0, 0.9);
+}
+
+.schedule-divider {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, rgba(253, 206, 0, 0.3), transparent);
+    margin: 0 2rem;
+}
+
+/* Old Schedule Grid - Keep for backwards compatibility */
 .schedule-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -283,23 +379,46 @@ main {
 }
 
 .schedule-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #fdce00;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.schedule-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #fdce00, #1b38e3);
 }
 
 .schedule-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(253, 206, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .schedule-card h3 {
-    color: #1b38e3;
+    color: #fdce00;
     margin-bottom: 1rem;
     font-weight: 700;
+}
+
+.schedule-card p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.schedule-card strong {
+    color: rgba(253, 206, 0, 0.9);
 }
 
 /* Info Cards - Dark Modern Theme */
@@ -346,13 +465,47 @@ main {
     font-size: 1.3rem;
 }
 
-/* Contact Form */
+.info-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.info-card ul {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.info-card ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Form - Match the dark glass theme */
 .contact-form {
-    background: white;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 3rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #fdce00, #1b38e3);
+}
+
+.contact-form h3 {
+    color: #fdce00 !important;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
 }
 
 .form-group {
@@ -362,35 +515,47 @@ main {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #1b38e3;
+    color: rgba(253, 206, 0, 0.9);
     font-weight: 600;
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #e9ecef;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     font-family: inherit;
     transition: all 0.3s ease;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-color: #fdce00;
-    box-shadow: 0 0 10px rgba(253, 206, 0, 0.3);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 15px rgba(253, 206, 0, 0.3);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /* Footer - Minimalist Premium */
 .footer {
+    flex-shrink: 0;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
     color: rgba(255, 255, 255, 0.8);
     padding: 3rem 2rem 2rem 2rem;
-    margin-top: 4rem;
+    margin-top: 1rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .footer::before {
@@ -564,26 +729,60 @@ main {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header {
-        font-size: 2rem;
-        padding: 0.8rem;
+        padding: 0 1.5rem;
+        height: 70px;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+
+    .logo-accent {
+        height: 30px;
+    }
+
+    .header-subtitle {
+        font-size: 0.65rem;
+        letter-spacing: 2px;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
     }
 
     .navbar {
-        top: 80px;
+        top: 70px;
+        transform: translateX(0);
     }
 
     .nav-menu {
         flex-wrap: wrap;
+        height: auto;
+        padding: 0.5rem;
+        justify-content: space-evenly;
+    }
+
+    .nav-item {
+        margin: 0.25rem;
     }
 
     .nav-link {
-        padding: 1rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.7rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-link::after {
+        bottom: 5px;
     }
 
     main {
-        margin-top: 160px;
+        margin-top: 140px;
         padding: 1rem;
+    }
+
+    .hero {
+        padding: 3rem 1.5rem;
     }
 
     .hero h2 {
@@ -592,6 +791,17 @@ main {
 
     .hero p {
         font-size: 1.1rem;
+    }
+
+    .schedule-unified {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+    
+    .schedule-divider {
+        width: 100%;
+        height: 1px;
+        margin: 1.5rem 0;
     }
 
     .footer-content {
@@ -606,6 +816,14 @@ main {
 
     .footer-credits {
         text-align: center;
+    }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .nav-link {
+        padding: 1rem 1.5rem;
+        font-size: 0.85rem;
     }
 }
 

@@ -18,37 +18,45 @@
                 <div class="hero-content">
                     <h2>Welcome to Edge Fitness and Sports Performance</h2>
                     <p>Your journey to peak performance starts here. Explore our services and join our community.</p>
-                    <a href="#" class="cta-button" data-page="training">Start Your Journey</a>
+                    <a href="#" class="cta-button" data-page="contact">Start Your Journey</a>
                 </div>
             </div>
 
             <div class="info-cards">
                 <div class="info-card">
-                    <h3>🏋️ Adult Training</h3>
+                    <h3>Adult Training</h3>
                     <p>Professional strength and conditioning programs designed for adults of all fitness levels. Build strength, improve endurance, and achieve your personal best.</p>
                 </div>
                 <div class="info-card">
-                    <h3>🏆 High School Programs</h3>
+                    <h3>High School Programs</h3>
                     <p>Specialized sports performance training for high school athletes. Develop skills, prevent injuries, and gain competitive advantage.</p>
                 </div>
                 <div class="info-card">
-                    <h3>🧘 Sunday Yoga</h3>
+                    <h3>Sunday Yoga</h3>
                     <p>Relax and restore with our peaceful Sunday yoga sessions. Perfect for recovery, flexibility, and mental wellness.</p>
                 </div>
             </div>
 
             <div class="schedule-grid">
-                <div class="schedule-card">
-                    <h3>Weekly Schedule</h3>
-                    <p><strong>Monday-Friday:</strong> 6:00 AM - 9:00 PM<br>
-                    <strong>Saturday:</strong> 8:00 AM - 6:00 PM<br>
-                    <strong>Sunday:</strong> 10:00 AM - 2:00 PM (Yoga Only)</p>
-                </div>
-                <div class="schedule-card">
-                    <h3>Class Times</h3>
-                    <p><strong>Adult Training:</strong> 6 AM, 12 PM, 6 PM<br>
-                    <strong>High School:</strong> 3:30 PM, 4:30 PM<br>
-                    <strong>Sunday Yoga:</strong> 10 AM, 12 PM</p>
+                <div class="schedule-container">
+                    <div class="schedule-unified">
+                        <div class="schedule-section">
+                            <h3>Adult Classes</h3>
+                            <p><strong>Mon-Fri:</strong> 5:00 AM, 6:15 AM, 7:30 AM, 8:45 AM, 5:15 PM</p>
+                            <p><strong>Saturday:</strong> 8:00 AM</p>
+                        </div>
+                        <div class="schedule-divider"></div>
+                        <div class="schedule-section">
+                            <h3>Sports Performance</h3>
+                            <p><strong>Mon, Wed, Fri:</strong> 4:00 PM</p>
+                            <p><strong>Tue, Wed, Thu:</strong> 6:30 PM</p>
+                        </div>
+                        <div class="schedule-divider"></div>
+                        <div class="schedule-section">
+                            <h3>Yoga</h3>
+                            <p><strong>Sunday:</strong> 8:00 AM</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -164,15 +172,15 @@
 
             <div class="info-cards" style="margin-top: 3rem;">
                 <div class="info-card">
-                    <h3>📍 Location</h3>
+                    <h3>Location</h3>
                     <p>123 Fitness Street<br>Your City, State 12345</p>
                 </div>
                 <div class="info-card">
-                    <h3>📞 Phone</h3>
+                    <h3>Phone</h3>
                     <p>(555) 123-4567</p>
                 </div>
                 <div class="info-card">
-                    <h3>✉️ Email</h3>
+                    <h3>Email</h3>
                     <p>info@edgefitness.com</p>
                 </div>
             </div>
