@@ -63,7 +63,7 @@
 
         <!-- Training Page -->
         <section id="training" class="page-section">
-            <div class="hero" style="background: linear-gradient(135deg, #fdce00 0%, #ffd633 100%); color: #1b38e3;">
+            <div class="hero">
                 <div class="hero-content">
                     <h2>Training Programs</h2>
                     <p>Unlock your potential with our expert-designed training programs</p>
@@ -73,33 +73,15 @@
             <div class="info-cards">
                 <div class="info-card">
                     <h3>Adult Fitness Training</h3>
-                    <p>Our adult programs focus on functional fitness, strength building, and overall wellness. Whether you're a beginner or experienced athlete, our certified trainers will create a personalized plan to help you reach your goals.</p>
-                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>Strength & Conditioning</li>
-                        <li>HIIT Training</li>
-                        <li>Functional Movement</li>
-                        <li>Nutrition Coaching</li>
-                    </ul>
+                    <p>Our Certified Functional Strength Coaches (CFSC) create personalized programs that prioritize safe, effective training while helping you achieve your fitness goals. Whether you're focused on weight loss, building strength, or improving overall wellness, our coaches design balanced programs incorporating cardiovascular exercise, strength training, and mobility work. We emphasize proper form and technique to minimize injury risk while maximizing results, providing the motivation and education you need for lasting success.</p>
                 </div>
                 <div class="info-card">
-                    <h3>High School Sports Performance</h3>
-                    <p>Designed specifically for young athletes, our high school programs enhance athletic performance while emphasizing proper form and injury prevention. Train like a pro and dominate on the field.</p>
-                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>Sport-Specific Training</li>
-                        <li>Speed & Agility</li>
-                        <li>Injury Prevention</li>
-                        <li>Mental Conditioning</li>
-                    </ul>
+                    <h3>Sports Performance</h3>
+                    <p>EDGE's dynamic training system reduces injury risk while preparing athletes physically and mentally for their sport. Our experienced coaches specialize in baseball, basketball, football, soccer, and more, delivering personalized programs in our state-of-the-art facility. We focus on building strength, speed, and agility while refining sport-specific skills and techniques. Beyond physical development, we cultivate a growth mindset that helps student-athletes enjoy the training process, compete with confidence, and develop as well-rounded individuals both on and off the field.</p>
                 </div>
                 <div class="info-card">
                     <h3>Sunday Yoga Classes</h3>
-                    <p>End your week with mindfulness and movement. Our yoga classes promote flexibility, balance, and mental clarity. Perfect for active recovery and stress relief.</p>
-                    <ul style="margin-top: 1rem; padding-left: 1.5rem;">
-                        <li>Vinyasa Flow</li>
-                        <li>Restorative Yoga</li>
-                        <li>Meditation</li>
-                        <li>Breathwork</li>
-                    </ul>
+                    <p>End your week with mindfulness and movement in our Sunday yoga sessions. Our classes promote flexibility, balance, and mental clarity while providing the perfect complement to intense training. Whether you're an athlete seeking active recovery or simply looking to reduce stress and improve body awareness, our yoga practice offers a welcoming space for all experience levels. Through breathwork, stretching, and guided meditation, you'll enhance your range of motion, prevent injuries, and cultivate the mind-body connection essential for peak performance and overall wellness.</p>
                 </div>
             </div>
         </section>
@@ -113,14 +95,69 @@
                 </div>
             </div>
 
+            <!-- Owners Section -->
+            <div class="team-section">
+                <h2 class="section-title">Our Owners</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/shane.jpeg" alt="Shane Lawson">
+                        </div>
+                        <div class="team-info">
+                            <h3>Shane Lawson</h3>
+                            <p class="team-role">GM & Head Trainer</p>
+                            <p>Shane has 15 years of experience in the health and wellness industry. He was a strength and conditioning coach for the Chicago Blackhawks and Rockford Icehogs from 2009-2018. He was a part of 3 Stanley Cup Championships during his time with the team. After his resignation in 2018, he went on to become a pillar in the Health and Wellness community by sharing his knowledge and experience with the adults and athletes that he trains.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/korie.jpeg" alt="Korie Lawson">
+                        </div>
+                        <div class="team-info">
+                            <h3>Korie Lawson</h3>
+                            <p class="team-role">Co-Owner</p>
+                            <p>Korie Lawson is a seasoned fitness enthusiast with a deep-rooted passion for health and wellness. Embracing a holistic lifestyle, she intertwines physical fitness with mental and spiritual well-being in her daily routine. Alongside her commitment to fitness, Korie is the proud co-owner of Embellish Beauty Bar, where she empowers others to feel confident and beautiful. Beyond her professional endeavors, Korie finds fulfillment in motherhood, cherishing her role as a devoted mother of three</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coaches Section -->
+            <div class="team-section">
+                <h2 class="section-title">Our Coaches</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/aryn.jpg" alt="Aryn Prosser">
+                        </div>
+                        <div class="team-info">
+                            <h3>Aryn Prosser</h3>
+                            <p class="team-role">Yoga Instructor</p>
+                            <p>Aryn is a licensed Massage Therapist and Yoga Instructor with over 20 years of experience in health and wellness. Starting her career as a nurse, she has dedicated her life to understanding the human body and mind, earning over 20 certifications including Transformational Nutrition. Her goal is to help individuals discover and own their full potential, empowering them to feel amazing in both body and mind every single day.</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-photo">
+                            <img src="assets/devon.jpeg" alt="Coach Devon">
+                        </div>
+                        <div class="team-info">
+                            <h3>Coach Devon</h3>
+                            <p class="team-role">Fitness Coach</p>
+                            <p>Coach Devon discovered his passion for fitness in 8th grade through football, transforming from a shy, bookish kid into a dedicated athlete. He competed in football and track and field through high school and college at the D2 and D3 levels. With a bachelor's degree in Exercise Sports Science and working toward his NASM certifications in personal training and nutrition, Devon loves helping clients achieve their goals and overcome both physical and mental barriers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Cards -->
             <div class="info-cards">
                 <div class="info-card">
                     <h3>Our Mission</h3>
                     <p>At Edge Fitness and Sports Performance, we're dedicated to helping individuals of all ages and fitness levels reach their peak potential. Our mission is to provide top-tier training in a supportive, motivating environment that pushes you to be your best.</p>
                 </div>
                 <div class="info-card">
-                    <h3>Expert Trainers</h3>
-                    <p>Our certified trainers bring years of experience in sports performance, fitness coaching, and wellness. We stay current with the latest training methodologies to ensure you receive the most effective and safe programming.</p>
+                    <h3>Our Approach</h3>
+                    <p>We combine cutting-edge training methodologies with personalized attention to ensure every member receives programming tailored to their unique goals and abilities. Safety, effectiveness, and sustainable progress are at the core of everything we do.</p>
                 </div>
                 <div class="info-card">
                     <h3>Community Focused</h3>

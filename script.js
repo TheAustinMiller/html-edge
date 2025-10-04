@@ -73,38 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-// Mobile menu toggle
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileToggle = document.querySelector('.mobile-menu-toggle');
-    const navbar = document.querySelector('.navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    // Create mobile menu toggle button if it doesn't exist
-    if (!mobileToggle) {
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'mobile-menu-toggle';
-        toggleBtn.innerHTML = '☰';
-        toggleBtn.setAttribute('aria-label', 'Toggle menu');
-        document.body.appendChild(toggleBtn);
-        
-        toggleBtn.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-            toggleBtn.innerHTML = navbar.classList.contains('active') ? '✕' : '☰';
-        });
-    }
-
-    // Close menu when clicking a nav link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navbar.classList.remove('active');
-                const toggle = document.querySelector('.mobile-menu-toggle');
-                if (toggle) toggle.innerHTML = '☰';
-            }
-        });
-    });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
     const footerNavLinks = document.querySelectorAll('.footer-links a');
     
