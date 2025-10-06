@@ -176,49 +176,61 @@
             </div>
 
             <div class="contact-form">
-                <h3 style="color: #1b38e3; margin-bottom: 2rem; font-size: 2rem; text-align: center;">Contact Form</h3>
-                <form>
+                <h3>Contact Form</h3>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="_replyto" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <label for="referral">How did you hear about us?</label>
+                        <select id="referral" name="referral">
+                            <option value="">Select an option...</option>
+                            <option value="Facebook">Facebook</option>
+                            <option value="Instagram">Instagram</option>
+                            <option value="Google Search">Google Search</option>
+                            <option value="Referral">Referral</option>
+                            <option value="Other">Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="program">Program Interest</label>
-                        <select id="program" name="program" style="width: 100%; padding: 1rem; border: 2px solid #e9ecef; border-radius: 10px; font-family: inherit;">
-                            <option>Adult Training</option>
-                            <option>High School Program</option>
-                            <option>Sunday Yoga</option>
-                            <option>General Inquiry</option>
+                        <select id="program" name="program">
+                            <option value="">Select an option...</option>
+                            <option value="Try Us Out">Try Us Out</option>
+                            <option value="Improve Performance">Improve Performance</option>
+                            <option value="Improve Mobility">Improve Mobility</option>
+                            <option value="Increase Muscle Mass">Increase Muscle Mass</option>
+                            <option value="Lose Body Fat">Lose Body Fat</option>
+                            <option value="Talk to Us">Talk to Us</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your fitness goals..."></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your fitness goals..." required></textarea>
                     </div>
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Edge Fitness">
                     <button type="submit" class="cta-button" style="width: 100%; margin-top: 1rem;">Send Message</button>
                 </form>
+                <div id="form-status" style="margin-top: 1rem; text-align: center; display: none;"></div>
             </div>
 
             <div class="info-cards" style="margin-top: 3rem;">
                 <div class="info-card">
                     <h3>Location</h3>
-                    <p>123 Fitness Street<br>Your City, State 12345</p>
+                    <p>5187 Erickson Dr<br>Roscoe, Illinois 61073</p>
                 </div>
                 <div class="info-card">
                     <h3>Phone</h3>
-                    <p>(555) 123-4567</p>
+                    <p>(815) 904-7074</p>
                 </div>
                 <div class="info-card">
                     <h3>Email</h3>
-                    <p>info@edgefitness.com</p>
+                    <p>info@levelfourfit.com</p>
                 </div>
             </div>
         </section>

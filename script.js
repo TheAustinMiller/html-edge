@@ -88,3 +88,54 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Contact form submission with Formspree
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#fdce00';
+                    formStatus.textContent = 'Thank you! Your message has been sent successfully.';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                formStatus.style.display = 'block';
+                formStatus.style.color = '#ff6b6b';
+                formStatus.textContent = 'Oops! There was a problem sending your message. Please try again.';
+            } finally {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                
+                // Hide status message after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            }
+        });
+    }
+});
