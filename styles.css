@@ -869,20 +869,30 @@ main {
     }
 
     .nav-menu {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 0.5rem;
+        flex-wrap: nowrap;
+        height: 60px;
+        padding: 0;
         justify-content: space-evenly;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .nav-menu::-webkit-scrollbar {
+        display: none;
     }
 
     .nav-item {
-        margin: 0.25rem;
+        margin: 0;
+        flex-shrink: 0;
     }
 
     .nav-link {
-        padding: 0.7rem 1rem;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
+        padding: 0.7rem 0.8rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
     }
 
     .nav-link::after {
