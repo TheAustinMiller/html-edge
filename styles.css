@@ -6,6 +6,9 @@
 
 html,
 body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
     height: 100%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
@@ -21,6 +24,7 @@ body {
         radial-gradient(circle at 80% 20%, rgba(151, 253, 4, 0.1) 0%, transparent 50%),
         linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0f0f0f 100%);
     min-height: 100vh;
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Custom Scrollbar - Always on top */
